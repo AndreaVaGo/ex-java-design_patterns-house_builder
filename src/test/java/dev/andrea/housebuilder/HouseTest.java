@@ -15,21 +15,21 @@ class HouseTest {
     }
 
     @Test
-    void shouldHaveswimmingPool() {
+    void shouldHaveSwimmingPool() {
         House house = new House();
         house.setSwimmingPool(true);
         assertThat(house.isSwimmingPool(), is(true));
     }
 
     @Test
-    void shouldHavefancyStatues() {
+    void shouldHaveFancyStatues() {
         House house = new House();
         house.setFancyStatues(true);
         assertThat(house.isFancyStatues(), is(true));
     }
 
     @Test
-    void shouldHavegarden() {
+    void shouldHaveGarden() {
         House house = new House();
         house.setGarden(true);
         assertThat(house.isGarden(), is(true));
