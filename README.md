@@ -2,6 +2,8 @@
 
 Exercise to practice the Builder design pattern in Java, applied to the `House` entity.
 
+**Author:** Andrea Vázquez ([@AndreaVaGo](https://github.com/AndreaVaGo))
+
 ## Description
 
 Starting from the `House` entity, this project implements the Builder design pattern to allow building different types of houses, each representing a specific combination of attributes (garage, garden, swimming pool, fancy statues).
@@ -75,6 +77,40 @@ classDiagram
 - **`buildBasicHouse()`** — no optional attributes activated.
 - **`buildHouseWithGarageAndGarden()`** — garage + garden activated.
 - **`buildLuxuryHouse()`** — garage + swimming pool + fancy statues + garden, all activated.
+
+## Usage example
+
+```java
+HouseBuilder builder = new ConcreteHouseBuilder();
+HouseDirector director = new HouseDirector(builder);
+
+House basicHouse = director.buildBasicHouse();
+House cozyHouse = director.buildHouseWithGarageAndGarden();
+House luxuryHouse = director.buildLuxuryHouse();
+
+// Custom configuration, without the Director
+House customHouse = builder.garage(true).swimmingPool(true).build();
+```
+
+## Project structure
+
+```
+ex-java-design_patterns-house_builder/
+├── src/
+│   ├── main/java/dev/andrea/housebuilder/
+│   │   ├── House.java
+│   │   ├── HouseBuilder.java
+│   │   ├── ConcreteHouseBuilder.java
+│   │   └── HouseDirector.java
+│   └── test/java/dev/andrea/housebuilder/
+│       ├── HouseTest.java
+│       ├── ConcreteHouseBuilderTest.java
+│       └── HouseDirectorTest.java
+├── assets/
+│   └── test-coverage.png
+├── pom.xml
+└── README.md
+```
 
 ## How to run
 
