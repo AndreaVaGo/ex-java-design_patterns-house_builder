@@ -1,5 +1,11 @@
 package dev.andrea.housebuilder;
 
+/**
+ * Concrete implementation of {@link HouseBuilder}.
+ * Assembles a {@link House} instance internally, applying each
+ * configuration step and returning the finished product via
+ * {@code build()}.
+ */
 public class ConcreteHouseBuilder implements HouseBuilder {
 
     private final House house;

@@ -1,5 +1,12 @@
 package dev.andrea.housebuilder;
 
+/**
+ * Director of the Builder pattern.
+ * Knows predefined "recipes" for building specific house types
+ * (basic, with garage and garden, luxury) by orchestrating calls
+ * to a {@link HouseBuilder} instance, without knowing its concrete
+ * implementation.
+ */
 public class HouseDirector {
 
     private HouseBuilder builder;
